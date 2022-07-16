@@ -12,7 +12,7 @@ namespace ChatWorkerServer
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
-            return Host.CreateDefaultBuilder(args).ConfigureServices((hostContext, services) => services.AddHostedService<Worker>());
+            return Host.CreateDefaultBuilder(args).UseSystemd().ConfigureServices((hostContext, services) => services.AddHostedService<Worker>());
         }
     }
 }
